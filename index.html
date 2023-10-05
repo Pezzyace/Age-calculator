@@ -2,36 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Frontend Mentor | Age calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
-
-  Day
-  DD
-
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
+<body class="bg-[#d1d5db] font-['Poppins'] box-border">
+  <section class="w-5/12  mt-24 m-auto bg-[#fff] rounded-l-3xl rounded-tr-3xl p-12 rounded-br-[100px] mb-4 mobile-view">
+    <form action="#" class="flex mb-16">
+      <div class="flex flex-col ">
+        <label for="" class="uppercase mb-2 text-[#716f6f] ">Day</label>
+        <input type="text" placeholder="DD" maxlength="2" id="dayInput" class="border border-inherit rounded p-4 outline-0 focus:border-[#854dff] font-bold text-xl w-36 mr-8 input">
+      </div>
+      <div class="flex flex-col">
+        <label for="" class="uppercase mb-2 text-[#716f6f]">Month</label>
+        <input type="text" placeholder="MM" maxlength="2" id="monthInput" class="border border-inherit rounded p-4 outline-0 focus:border-[#854dff] font-bold text-xl w-36 mr-8 input">
+      </div>
+      <div class="flex flex-col">
+        <label for=""class="uppercase mb-2 text-[#716f6f] ">Year</label>
+        <input type="text" placeholder="YY" maxlength="4" id="yearInput" class="border border-inherit rounded p-4 outline-0 focus:border-[#854dff] font-bold text-xl w-36 input">
+      </div>
+    </form>
+    <hr>
+    <div class="relative mb-12 margin">
+      <div class="bg-[#854dff] hover:bg-[#141414] cursor-pointer absolute rounded-full p-4 right-0 top-[-2.2rem] button" onclick="calculate()">
+        <img src="/assets/images/icon-arrow.svg" alt="" class="h-9">
+      </div>
+    </div>
+    <div class="flex items-center mb-4">
+      <span class="italic text-7xl mr-2 font-bold text-[#854dff] fontSize">--</span>
+      <p class="font-bold text-7xl italic fontSize">years</p>
+    </div>
+    <div class="flex items-center mb-4 ml-2">
+      <span class="italic text-7xl mr-2 font-bold text-[#854dff] fontSize">--</span>
+      <p class="font-bold text-7xl italic fontSize">months</p>
+    </div>
+    <div class="flex items-center ml-4">
+      <span class="italic text-7xl mr-2 font-bold text-[#854dff] fontSize">--</span>
+      <p class="font-bold text-7xl italic fontSize">days</p>
+    </div>
+  </section>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <style>
+    @media (max-width: 375px) {
+      .mobile-view { 
+        width: 90%;
+        margin-top: 50px;
+      }
+      .input{
+        width: 6rem;
+      }
+      .button{
+        right: 50%;
+        transform: translateX(50%);
+      }
+      .fontSize{
+        font-size: 4rem;
+      }
+      .margin{
+        margin-bottom: 60px;
+      }
+    }
+  </style>
+  <script src="script.js"></script>
 </body>
 </html>
