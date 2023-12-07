@@ -18,18 +18,18 @@
   <section class="w-5/12  mt-24 m-auto bg-[#fff] rounded-l-3xl rounded-tr-3xl p-12 rounded-br-[100px] mb-4 mobile-view">
     <form action="#" class="flex mb-16">
       <div class="flex flex-col ">
-        <label for="" class="uppercase mb-2 text-[#716f6f]">Day</label>
-        <input type="text" placeholder="DD" maxlength="2" id="day" class="border border-inherit rounded p-4 outline-0 focus:border-[#854dff] font-bold text-xl w-36 mr-8 input" oninput="validateInput(this)">
+        <label for="" class="uppercase mb-2 text-[#716f6f]" id="label">Day</label>
+        <input type="text" placeholder="DD" maxlength="2" id="day" class="border border-solid border-inherit rounded p-4 outline-0 focus:border-[#854dff] font-bold text-xl w-36 mr-8 input" oninput="validateInput(this)">
         <p id="error-message-day" class="text-sm mt-px italic font-[400] text-[#ff5757]"></p>
       </div>
       <div class="flex flex-col">
-        <label for="" class="uppercase mb-2 text-[#716f6f]">Month</label>
-        <input type="text" placeholder="MM" maxlength="2" id="month" class="border border-inherit rounded p-4 outline-0 focus:border-[#854dff] font-bold text-xl w-36 mr-8 input" oninput="validateInput(this)">
+        <label for="" class="uppercase mb-2 text-[#716f6f] " id="label">Month</label>
+        <input type="text" placeholder="MM" maxlength="2" id="month" class="border border-solid border-inherit rounded p-4 outline-0 focus:border-[#854dff] font-bold text-xl w-36 mr-8 input" oninput="validateInput(this)">
         <p id="error-message-month" class="text-sm mt-px italic font-[400] text-[#ff5757]"></p>
       </div>
       <div class="flex flex-col">
-        <label for=""class="uppercase mb-2 text-[#716f6f] ">Year</label>
-        <input type="text" placeholder="YY" maxlength="4" id="year" class="border border-inherit rounded p-4 outline-0 focus:border-[#854dff] font-bold text-xl w-36 input" oninput="validateInput(this)">
+        <label for=""class="uppercase mb-2 text-[#716f6f] " id="label">Year</label>
+        <input type="text" placeholder="YY" maxlength="4" id="year" class="border border-solid border-inherit rounded p-4 outline-0 focus:border-[#854dff] font-bold text-xl w-36 input" oninput="validateInput(this)">
         <p id="error-message-year" class="text-sm mt-px italic font-[400] text-[#ff5757]"></p>
       </div>
     </form>

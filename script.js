@@ -1,7 +1,5 @@
 function validateInput(inputElement) {
   inputElement.value = inputElement.value.replace(/\D/g, "");
-
-  inputElement.classList.remove('border-red-500');
 }
 
 function calculateAge() {
@@ -14,24 +12,22 @@ function calculateAge() {
   const errorMessageDay = document.getElementById("error-message-day");
   const errorMessageMonth = document.getElementById("error-message-month");
   const errorMessageYear = document.getElementById("error-message-year");
+  const label = document.getElementById("label");
 
-  // Check if valid inputs were provided
   if (dayInput && monthInput && yearInput) {
     const day = parseInt(dayInput);
     const month = parseInt(monthInput);
     const year = parseInt(yearInput);
 
-    // Check if the inputs are valid date components
     if (!isNaN(day) && !isNaN(month) && !isNaN(year) &&
         day >= 1 && day <= 31 && month >= 1 && month <= 12 && year >= 1000 && year <= 2100) {
-      const birthdate = new Date(`${year}-${month}-${day}`);
+      const birthDate = new Date(`${year}-${month}-${day}`);
       const currentDate = new Date();
 
-      // Check if a valid date was entered
-      if (!isNaN(birthdate.getTime())) {
-        const ageInMilliseconds = currentDate - birthdate;
+      if (!isNaN(birthDate.getTime())) {
+        const ageInMilliseconds = currentDate - birthDate;
         const ageInYears = Math.floor(ageInMilliseconds / (365 * 24 * 60 * 60 * 1000));
-        const ageInMonths = Math.floor(ageInMilliseconds / (30.44 * 24 * 60 * 60 * 1000)); // Average number of days in a month
+        const ageInMonths = Math.floor(ageInMilliseconds / (30.44 * 24 * 60 * 60 * 1000));
         const ageInDays = Math.floor(ageInMilliseconds / (24 * 60 * 60 * 1000));
 
         const years = ageInYears;
@@ -44,7 +40,7 @@ function calculateAge() {
         
         errorMessageDay.textContent = "";
         errorMessageMonth.textContent = "";
-        errorMessageYear.textContent = ""; // Clear any previous error messages
+        errorMessageYear.textContent = "";
       } else {
         ageYearsOutput.textContent = "--";
         ageMonthsOutput.textContent = "--";
@@ -52,10 +48,9 @@ function calculateAge() {
         errorMessageDay.textContent = "Invalid date format";
         errorMessageMonth.textContent = "Invalid date format";
         errorMessageYear.textContent = "Invalid date format";
-
-        dayInput.classList.add('border-red-500');
-        monthInput.classList.add('border-red-500');
-        yearInput.classList.add('border-red-500');
+        dayInput.style.borderColor = "red";
+        monthInput.style.borderColor = "red";
+        yearInput.style.borderColor = "red";
       }
     } else {
       ageYearsOutput.textContent = "--";
@@ -64,10 +59,9 @@ function calculateAge() {
       errorMessageDay.textContent = "Must be a valid date";
       errorMessageMonth.textContent = "Must be a valid month";
       errorMessageYear.textContent = "Must be a valid year";
-
-      dayInput.classList.add('border-red-500');
-      monthInput.classList.add('border-red-500');
-      yearInput.classList.add('border-red-500');
+      dayInput.style.borderColor = "red";
+        monthInput.style.borderColor = "red";
+        yearInput.style.borderColor = "red";
     }
   } else {
     ageYearsOutput.textContent = "--";
@@ -76,9 +70,8 @@ function calculateAge() {
     errorMessageDay.textContent = "This field is required";
     errorMessageMonth.textContent = "This field is required";
     errorMessageYear.textContent = "This field is required";
-
-    if (!day) dayInput.classList.add('border-red-500');
-    if (!month) monthInput.classList.add('border-red-500');
-    if (!year) yearInput.classList.add('border-red-500');
+    dayInput.style.borderColor = "red";
+    monthInput.style.borderColor = "red";
+    yearInput.style.borderColor = "red";
   }
 }
